@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+body {
+    display: flex;
+    height: 100vh;
+    background: #f8f9fc;
+}
+
+.sidebar {
+    width: 25%;
+    height: 100vh;
+    background: white;
+    padding: 20px;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.logo {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.line {
+    width: 98%;
+    height: 1px;
+    background-color: rgb(218, 215, 215); 
+    margin: 10px 0; 
+}
+
+
+.tabs {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+.tab {
+    text-align: left;
+    padding: 10px;
+    background-color: #f1f3f7;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: #5a5a5a;
+    cursor: pointer;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    margin-right: 2%;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.tab i {
+    color: #a0a0a0;
+}
+.tab.active {
+    color: #007bff;
+    font-weight: bold;
+}
+.tab.active i {
+    color: #007bff;
+}
+
+.content {
+    display: none;
+    margin-top: 10%;
+    padding-bottom: 20%;
+}
+.content.active {
+    display: block;
+}
+
+.task-info {
+    margin-bottom: 20px;
+}
+.task-info div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+.task-info i {
+    color: #007bff;
+}
+
+.subtasks {
+    background: #f1f3f7;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10%;
+}
+
+h4 {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+.subtask {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+button {
+    width: 100%;
+    padding: 8px;
+    background: transparent;
+    border: none;
+    color: #007bff;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+button:hover {
+    text-decoration: underline;
+}
+
+.delete{
+    width: 20px;
+    height: 20px;
+}
+
+.save-btn {
+    color: black;
+    background-color: white;
+    width: auto;  
+    padding: 5px 10px;  
+    margin: 10px;
+    border-radius: 5px;
+    border: 2px solid #007bff;
+    cursor: pointer;  
+    font-size: 12px;  
+    text-align: center;  
+    display: inline-block;  
+    transition: background-color 0.3s, color 0.3s;  
+}
+
+.save-btn:hover {
+    background-color: #007bff;  
+    color: white;  
+    border-color: #0056b3;  
+}
+

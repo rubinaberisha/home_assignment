@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imbus Board</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="assets/logo.svg" alt="Imbus Logo" class="logo">
+        <h2>Imbus board</h2>
+
+        <div class="line"></div>
+
+        <div class="tabs">
+            <button class="tab active" data-view="details"><img src="assets/icon-details.svg" alt="Details"> Details</button>
+            <button class="tab" data-view="activity"><img src="assets/icon-activity.svg" alt="Activity"> Activity</button>
+            <button class="tab" data-view="comments"><img src="assets/icon-comments.svg" alt="Comments"> Comments</button>
+            <button class="tab" data-view="attachments"><img src="assets/icon-attachments.svg" alt="Attachments"> Attachments</button>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="content active" id="details">
+            <div class="task-info">
+                <div><img src="assets/icon-status.svg" alt="Status"> Status: <span id="status" class="info"></span></div>
+                <div><img src="assets/icon-assignee.svg" alt="Assignee"> Assignee: <span id="assignee" class="info"></span></div>
+                <div><img src="assets/icon-reporter.svg" alt="Reporter"> Reporter: <span id="reporter" class="info"></span></div>
+                <div><img src="assets/icon-importance.svg" alt="Importance"> Importance: <span id="importance" class="info"></span></div>
+                <div><img src="assets/icon-taskid.svg" alt="Task"> Task ID: <span id="task_id" class="info"></span></div>
+            </div>
+            
+            <div class="line"></div>
+
+            <div class="subtasks">
+                <h4>Subtask name</h4>
+                <ul id="subtask-list">
+                    <li class="subtask"><input type="checkbox"> Send invoice to collections agency</li>
+                </ul>
+                <button id="add-subtask"><img src="assets/icon-addsubtask.svg" alt="Add Subtask"> Add subtask</button>
+            </div>
+        </div>
+
+        <div class="content" id="activity">
+            <p>Your activity board is empty. How about adding your first task?</p>
+        </div>
+        <div class="content" id="comments">
+            <p>No feedback yet. What are your thought?</p>
+        </div>
+        <div class="content" id="attachments">
+            <p>No attachments added yet - feel free to upload one!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
