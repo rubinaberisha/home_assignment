@@ -1,38 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const jsonData = [
-        {
-            "id": 1,
-            "status": "To Do",
-            "assignee": "John Doe",
-            "reporter": "Jane Smith",
-            "importance": "High",
-            "task_id": "19823123"
-        },
-        { 
-            "id": 2,
-            "status": "Completed",
-            "assignee": "Alice Johnson",
-            "reporter": "Bob Brown",
-            "importance": "Medium",
-            "task_id": "19823191"
-        },
-        {
-            "id": 3,
-            "status": "In Progress",
-            "assignee": "Brian Griffin",
-            "reporter": "Peter Griffin",
-            "importance": "Very urgent",
-            "task_id": "19823190"
-        }
-    ];
+    // const jsonData = [
+    //     {
+    //         "id": 1,
+    //         "status": "To Do",
+    //         "assignee": "John Doe",
+    //         "reporter": "Jane Smith",
+    //         "importance": "High",
+    //         "task_id": "19823123"
+    //     },
+    //     { 
+    //         "id": 2,
+    //         "status": "Completed",
+    //         "assignee": "Alice Johnson",
+    //         "reporter": "Bob Brown",
+    //         "importance": "Medium",
+    //         "task_id": "19823191"
+    //     },
+    //     {
+    //         "id": 3,
+    //         "status": "In Progress",
+    //         "assignee": "Brian Griffin",
+    //         "reporter": "Peter Griffin",
+    //         "importance": "Very urgent",
+    //         "task_id": "19823190"
+    //     }
+    // ];
 
-    // task details
-    const task = jsonData[0];
-    document.getElementById("status").innerText = task.status;
-    document.getElementById("assignee").innerText = task.assignee;
-    document.getElementById("reporter").innerText = task.reporter;
-    document.getElementById("importance").innerText = task.importance;
-    document.getElementById("task_id").innerText = task.task_id;
+    // // task details
+    // const task = jsonData[0];
+    // document.getElementById("status").innerText = task.status;
+    // document.getElementById("assignee").innerText = task.assignee;
+    // document.getElementById("reporter").innerText = task.reporter;
+    // document.getElementById("importance").innerText = task.importance;
+    // document.getElementById("task_id").innerText = task.task_id;
+
 
     // Tab switching 
     document.querySelectorAll(".tab").forEach(tab => {
@@ -71,8 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 const li = document.createElement("li");
                 li.classList.add("subtask");
                 li.innerHTML = `
+                    <button class="delete-btn"><img class="delete" src="assets/icon-delete.svg" alt="Delete"></button>
                     <span>${subtaskText}</span>
-                    <button class="delete-btn"><img class="delete" src="assets/icon-delete.svg" alt="Delete">Delete</button>
                 `;
                 subtaskList.appendChild(li);
 
@@ -89,4 +90,22 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("https://gist.githubusercontent.com/suhejbmorina99/1a10af1bba3e38435350fc73e55cfff0/raw/imbus-board.json")
+        .then(response => response.json())
+        .then(data => {
+            // Assuming you want to display the first task
+            const task = data[0]; 
+
+            // Update the HTML elements with JSON values
+            document.getElementById("status").innerText = task.status;
+            document.getElementById("assignee").innerText = task.assignee;
+            document.getElementById("reporter").innerText = task.reporter;
+            document.getElementById("importance").innerText = task.importance;
+            document.getElementById("task_id").innerText = task.task_id;
+        })
+        .catch(error => console.error("Error fetching data:", error));
 });

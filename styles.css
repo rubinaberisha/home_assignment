@@ -48,11 +48,12 @@ body {
     font-size: 16px;
     color: #5a5a5a;
     cursor: pointer;
-    margin-top: 5%;
-    margin-bottom: 2%;
+    /* margin-top: 5%;
+    margin-bottom: 2%; */
     margin-right: 2%;
     border-radius: 5px;
     font-size: 12px;
+    text-decoration: none !important;
 }
 .tab i {
     color: #a0a0a0;
@@ -67,7 +68,7 @@ body {
 
 .content {
     display: none;
-    margin-top: 10%;
+    /* margin-top: 10%; */
     padding-bottom: 20%;
 }
 .content.active {
@@ -77,7 +78,7 @@ body {
 .task-info {
     margin-bottom: 20px;
 }
-.task-info div {
+.task-info .added-class {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -86,12 +87,26 @@ body {
 .task-info i {
     color: #007bff;
 }
+.new-test{
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+}
 
+.new-test span:first-child {
+    text-align: left;
+    flex: 1;
+}
+
+.new-test .info {
+    text-align: left;
+    flex: 1; 
+}
 .subtasks {
     background: #f1f3f7;
     padding: 10px;
     border-radius: 5px;
-    margin-top: 10%;
+    /* margin-top: 10%; */
 }
 
 h4 {
@@ -109,8 +124,8 @@ h4 {
     margin-bottom: 5px;
 }
 button {
-    width: 100%;
-    padding: 8px;
+    /* width: 100%; */
+    /* padding: 8px; */
     background: transparent;
     border: none;
     color: #007bff;
